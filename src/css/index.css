@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  main {
+    padding-top: 60px; /* offset navbar height */
+  }
+  
+  .section {
+    height: 100vh;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .home {
+    background-color: #e3f2fd;
+    padding-top: 3rem;
+  }
+  
+  .about { background-color: #fce4ec; }
+  .services { background-color: #e8f5e9; }
+  .contact { background-color: #fff3e0; }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  p, li {
+    font-size: 1.2rem;
+  }
+  

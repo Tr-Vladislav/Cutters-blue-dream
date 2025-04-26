@@ -1,0 +1,212 @@
+.contact-section {
+  display: flex;
+  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 20px;
+  background: linear-gradient(to top left, rgb(23, 58, 140), #4c9aef);
+  position: relative;
+}
+
+.contact-section .contact-image {
+  border-radius: 15px;
+  width: 70%;
+  height: 80vh;
+  background-image: url('../assets/papercut_view.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.contact-section .contact-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(0, 56, 128, 0.8), rgba(0, 0, 0, 0.3));
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.contact-form {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  margin-left: -25%;
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #003366;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+.contact-form input[type="submit"],
+.contact-form button {
+  cursor: pointer;
+}
+
+/* Стили для ошибок */
+.input-wrapper {
+  position: relative;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.9rem;
+  position: absolute;
+  top: -18px;
+  left: 5px;
+}
+
+.error-border {
+  border-color: red !important;
+}
+
+/* Модальное окно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeInOverlay 0.3s ease-out;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: modalAppear 0.5s ease-out forwards;
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.modal-content button {
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+/* Анимация для фона */
+@keyframes fadeInOverlay {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Анимация для появления модалки */
+@keyframes modalAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Затемнение формы при отправке */
+.contact-form.submitting {
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* Красная рамка ошибок */
+.error-border {
+  border: 2px solid red;
+}
+
+/* Текст ошибки */
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .contact-image {
+    display: none;
+  }
+
+  .contact-form {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
