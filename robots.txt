@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dapper-sunflower-f8e9c0.netlify.app/sitemap.xml
